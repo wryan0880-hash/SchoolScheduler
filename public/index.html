@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SchoolScheduler — make space for what matters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="SchoolScheduler home"><span class="brand-mark">S</span><span>School<span class="brand-accent">Scheduler</span></span></a>
+        <div class="save-status"><span class="status-dot"></span>Saves on this computer only</div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="eyebrow"><span class="spark">✦</span> An AI planner for school days</div>
+          <h1>Less scramble.<br /><em>More done.</em></h1>
+          <p class="hero-copy">Put your schoolwork in one place. SchoolScheduler suggests a clear order, explains its thinking, and changes when your day changes.</p>
+          <div class="hero-pills"><span>Free to use</span><span>Explainable plans</span><span>Built for students</span></div>
+        </section>
+
+        <section class="workspace" aria-label="SchoolScheduler planner">
+          <aside class="sidebar">
+            <div class="section-label">Your task list <span id="taskCount">0</span></div>
+            <div id="taskList" class="task-list"></div>
+            <div class="add-row">
+              <input id="newTask" type="text" placeholder="Add a new task…" maxlength="120" />
+              <button id="addTask" class="icon-button" title="Add task" aria-label="Add task">+</button>
+            </div>
+            <button id="sampleTasks" class="text-button">↻ Load sample tasks</button>
+            <div class="sidebar-note"><span class="note-icon">✦</span><div><strong>Why it’s different</strong><br />The AI gives every task a reason for its spot — not just a list.</div></div>
+          </aside>
+
+          <section class="planner-panel">
+            <div class="panel-heading">
+              <div><div class="section-label">Plan with AI</div><h2 id="modeHeading">Organize your tasks</h2></div>
+              <div class="mode-toggle" role="tablist" aria-label="Choose a mode"><button class="mode active" data-mode="organize" role="tab" aria-selected="true">Organize</button><button class="mode" data-mode="talk" role="tab" aria-selected="false">Talk</button></div>
+            </div>
+
+            <div id="organizeView" class="mode-view">
+              <label for="taskInput">What do you need to get done?</label>
+              <textarea id="taskInput" rows="5" placeholder="One task per line — for example:&#10;Finish my science project&#10;Study for Friday’s math quiz"></textarea>
+              <div class="input-footer"><span class="helper">Add a due date in the task if you know it.</span><button id="organizeButton" class="primary-button"><span>Organize my tasks</span><span class="arrow">→</span></button></div>
+            </div>
+
+            <div id="talkView" class="mode-view hidden">
+              <label for="questionInput">What would you like help with?</label>
+              <textarea id="questionInput" rows="5" placeholder="Try: How can I get better at math homework?"></textarea>
+              <div class="input-footer"><span class="helper">Facts first. Safe, friendly help for school questions.</span><button id="talkButton" class="primary-button"><span>Ask SchoolScheduler</span><span class="arrow">→</span></button></div>
+            </div>
+
+            <div id="resultArea" class="result-area">
+              <div class="result-empty"><div class="empty-orbit"><span>✦</span></div><h3>Your plan will show up here</h3><p>Ask SchoolScheduler to sort your tasks. You’ll see the order and the reason behind every choice.</p></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="safety-strip"><div class="shield">✓</div><div><strong>A thoughtful starting point, not the final word.</strong> AI can be wrong. Double-check important facts with a teacher, parent, or trusted source.</div><span class="safety-link">Safety first</span></section>
+      </main>
+      <footer><span>SchoolScheduler · Version 1</span><span>Made for the Presidential SI Challenge</span></footer>
+    </div>
+    <script src="/storage.js"></script><script src="/app.js"></script>
+  </body>
+</html>

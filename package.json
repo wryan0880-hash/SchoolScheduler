@@ -1,0 +1,9 @@
+{
+  "name": "schoolscheduler",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small AI-assisted school task planner for the Presidential SI Challenge.",
+  "scripts": {
+    "start": "node server/index.js"
+  }
+}

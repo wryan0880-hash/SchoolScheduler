@@ -29,6 +29,8 @@ function clearCachedKey() {
 /**
  * Get a short-lived AI key without exposing the key or token to client code.
  * Pass { force: true } after the AI provider reports that the key is invalid.
+ * Call this module only from server code; neither the key nor token is returned
+ * to, logged by, or otherwise exposed to client code.
  */
 async function getKey({ force = false } = {}) {
   if (!force && cachedKey && Date.now() < cachedExpiresAt) {
