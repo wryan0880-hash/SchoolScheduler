@@ -23,6 +23,7 @@ The AI key is fetched only through the server-only `getKey()` in `server/getKey.
 - “Thinking…” appears and the active AI button is disabled while waiting.
 - Sample tasks are included; no real people are used.
 - Tasks and the latest plan save in the browser using `public/storage.js`.
+- The latest saved plan returns after a refresh, and local assets are served without browser caching during development.
 - Saves on this computer only for now.
 - `.env` files are ignored by Git.
 

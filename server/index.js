@@ -94,7 +94,10 @@ function serveStatic(request, response) {
     response.end('Not found');
     return;
   }
-  response.writeHead(200, { 'Content-Type': contentTypes[path.extname(filePath)] || 'application/octet-stream' });
+  response.writeHead(200, {
+    'Content-Type': contentTypes[path.extname(filePath)] || 'application/octet-stream',
+    'Cache-Control': 'no-store',
+  });
   fs.createReadStream(filePath).pipe(response);
 }
 
