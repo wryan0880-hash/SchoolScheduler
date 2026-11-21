@@ -68,7 +68,6 @@ async function askOpenAI({ mode, message, tasks }) {
       },
       body: JSON.stringify({
         model,
-        temperature: 0.2,
         response_format: mode === 'organize' ? { type: 'json_object' } : undefined,
         messages: [
           { role: 'system', content: system },

@@ -19,6 +19,7 @@ The AI key is fetched only through the server-only `getKey()` in `server/getKey.
 - Adding a new task automatically asks the AI for an updated order when a plan already exists.
 - Every planned task includes a short explanation for its position.
 - Talk mode answers school questions with safety guidance and source reminders.
+- The OpenAI request uses `gpt-5.6-luna`-compatible defaults so both modes can answer successfully.
 - “Thinking…” appears and the active AI button is disabled while waiting.
 - Sample tasks are included; no real people are used.
 - Tasks and the latest plan save in the browser using `public/storage.js`.
