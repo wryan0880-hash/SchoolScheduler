@@ -24,6 +24,7 @@ The AI key is fetched only through the server-only `getKey()` in `server/getKey.
 - Sample tasks are included; no real people are used.
 - Tasks and the latest plan save in the browser using `public/storage.js`.
 - The latest saved plan returns after a refresh, and local assets are served without browser caching during development.
+- If `public/index.html` is opened directly, its AI requests can still reach the local server; the recommended URL remains `http://localhost:3000`.
 - Saves on this computer only for now.
 - `.env` files are ignored by Git.
 

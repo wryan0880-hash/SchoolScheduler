@@ -33,6 +33,20 @@ function sendJson(response, status, body) {
   response.end(JSON.stringify(body));
 }
 
+function addLocalCorsHeaders(request, response) {
+  const origin = request.headers.origin;
+  const allowedOrigins = new Set([
+    'null',
+    `http://localhost:${port}`,
+    `http://127.0.0.1:${port}`,
+  ]);
+  if (!allowedOrigins.has(origin)) return;
+  response.setHeader('Access-Control-Allow-Origin', origin);
+  response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  response.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  response.setHeader('Vary', 'Origin');
+}
+
 function readBody(request) {
   return new Promise((resolve, reject) => {
     let body = '';
@@ -102,6 +116,11 @@ function serveStatic(request, response) {
 }
 
 const server = http.createServer(async (request, response) => {
+  addLocalCorsHeaders(request, response);
+  if (request.method === 'OPTIONS' && request.url === '/api/ai') {
+    response.writeHead(204);
+    return response.end();
+  }
   if (request.method === 'POST' && request.url === '/api/ai') {
     try {
       const input = JSON.parse(await readBody(request));

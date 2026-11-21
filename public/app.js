@@ -1,6 +1,7 @@
 let state = loadState();
 let currentMode = 'organize';
 const isFilePage = window.location.protocol === 'file:';
+const apiEndpoint = isFilePage ? 'http://localhost:3000/api/ai' : '/api/ai';
 
 const taskList = document.querySelector('#taskList');
 const taskCount = document.querySelector('#taskCount');
@@ -50,14 +51,10 @@ function setBusy(button, busy) {
 }
 
 async function askAI(payload, button) {
-  if (isFilePage) {
-    resultArea.innerHTML = '<div class="error-box"><span class="error-icon">!</span><div><strong>Open SchoolScheduler through the local server.</strong><p>Run <code>npm start</code>, then open <strong>http://localhost:3000</strong> so the AI server can work safely.</p></div></div>';
-    return null;
-  }
   setBusy(button, true);
   resultArea.innerHTML = '<div class="thinking"><div class="thinking-spinner"></div><strong>Thinking…</strong><span>Finding a helpful next step for you.</span></div>';
   try {
-    const response = await fetch('/api/ai', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+    const response = await fetch(apiEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || 'I could not answer right now. Please check your internet connection and try again.');
     return data;
