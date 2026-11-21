@@ -9,7 +9,7 @@
 npm start
 ```
 
-3. Open <http://localhost:3000> in a browser.
+3. Open <http://localhost:3000> in a browser. Do not double-click `public/index.html`; the AI server is available only through the local URL.
 
 The AI key is fetched only through the server-only `getKey()` in `server/getKey.js`. The page never receives or prints the AI key or `KEYGEN_TOKEN`. The model is `gpt-5.6-luna`. Use `getKey({ force: true })` after OpenAI reports that a cached key is invalid.
 

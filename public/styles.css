@@ -29,7 +29,7 @@ h1 { margin-top: 18px; font: 600 clamp(47px, 6.2vw, 78px)/.95 'Space Grotesk', s
 h1 em { color: var(--coral); font-style: normal; }
 .hero-copy { color: #6b7a84; font-size: 16px; line-height: 1.65; max-width: 590px; margin-top: 24px; }
 .hero-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
-.hero-pills span { padding: 8px 12px; border: 1px solid #dce9e5; border-radius: 99px; color: #4c6d65; background: #effaf5; font-size: 11px; font-weight: 600; }
+.hero-pills span { display: inline-flex; flex: 0 0 auto; align-items: center; white-space: nowrap; padding: 8px 12px; border: 1px solid #dce9e5; border-radius: 99px; color: #4c6d65; background: #effaf5; font-size: 11px; font-weight: 600; }
 .workspace { display: grid; grid-template-columns: 305px 1fr; background: white; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
 .sidebar { padding: 27px 24px 24px; border-right: 1px solid var(--line); background: #fbfdfc; }
 .section-label { display: flex; align-items: center; gap: 8px; }
