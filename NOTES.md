@@ -25,6 +25,8 @@ The AI key is fetched only through the server-only `getKey()` in `server/getKey.
 - Tasks and the latest plan save in the browser using `public/storage.js`.
 - The latest saved plan returns after a refresh, and local assets are served without browser caching during development.
 - If `public/index.html` is opened directly, its AI requests can still reach the local server; the recommended URL remains `http://localhost:3000`.
+- Vercel deployment now has `api/ai.js` as the serverless AI route and `vercel.json` includes `BRIEF.md` for the function.
+- Add `KEYGEN_URL` and `KEYGEN_TOKEN` to Vercel Project Settings → Environment Variables for Production, Preview, and Development.
 - Saves on this computer only for now.
 - `.env` files are ignored by Git.
 
